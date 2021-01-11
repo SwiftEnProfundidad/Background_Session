@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 
 extension SearchViewController: UISearchBarDelegate {
-
+  
   @objc func dismissKeyboard() {
     searchBar.resignFirstResponder()
   }

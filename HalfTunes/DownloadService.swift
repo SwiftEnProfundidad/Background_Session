@@ -4,13 +4,13 @@ import Foundation
 // Downloads song snippets, and stores in local file.
 // Allows cancel, pause, resume download.
 class DownloadService {
-
+  
   // SearchViewController creates downloadsSession
   var downloadsSession: URLSession!
   var activeDownloads: [URL: Download] = [:]
-
+  
   // MARK: - Download methods called by TrackCell delegate methods
-
+  
   // Called when the Download button for a track is tapped
   func startDownload(_ track: Track) {
     let download = Download(url: track.url)
@@ -19,7 +19,7 @@ class DownloadService {
     download.isDownloading = true
     activeDownloads[download.url] = download
   }
-
+  
   // Called when the Pause button for a track is tapped
   func pauseDownload(_ track: Track) {
     guard let download = activeDownloads[track.url] else { return }
@@ -30,7 +30,7 @@ class DownloadService {
       download.isDownloading = false
     }
   }
-
+  
   // Called when the Cancel button for a track is tapped
   func cancelDownload(_ track: Track) {
     if let download = activeDownloads[track.url] {
@@ -38,7 +38,7 @@ class DownloadService {
       activeDownloads[track.url] = nil
     }
   }
-
+  
   // Called when the Resume button for a track is tapped
   func resumeDownload(_ track: Track) {
     guard let download = activeDownloads[track.url] else { return }
@@ -52,5 +52,7 @@ class DownloadService {
       download.isDownloading = true
     }
   }
-
+  
 }
+
+

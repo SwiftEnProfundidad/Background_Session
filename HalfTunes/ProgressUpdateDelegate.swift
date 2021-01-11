@@ -2,5 +2,5 @@
 import Foundation
 
 protocol ProgressUpdateDelegate {
-	func updateDisplay(progress: Float, totalSize : String);
+  func updateDisplay(progress: Float, totalSize : String);
 }

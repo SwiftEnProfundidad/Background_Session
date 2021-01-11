@@ -14,52 +14,24 @@ class SearchViewController: UIViewController {
   var searchResults: [Track] = []
   let queryService = QueryService()
   let downloadService = DownloadService()
-  let downloadsSession = URLSession(configuration: .default)
-
-  // MARK: - Future URLSessionDelegate code
-
-  func saveDownload(download : Download, location : URL?, response : URLResponse?, error : Error?) {
-    let sourceURL = download.url
-    if error != nil { return }
-
-    downloadService.activeDownloads[sourceURL] = nil
-
-    let destinationURL = localFilePath(for: sourceURL)
-
-    let fileManager = FileManager.default
-    try? fileManager.removeItem(at: destinationURL)
-    do {
-      try fileManager.copyItem(at: location!, to: destinationURL)
-    } catch let error {
-      print("Could not copy file to disk: \(error.localizedDescription)")
-    }
-
-    if let index = trackIndex(for: download.task!) {
-      OperationQueue.main.addOperation {
-        self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
-      }
-    }
-  }
-
-  fileprivate func trackIndex(for task: URLSessionDownloadTask) -> Int? {
-    guard let url = task.originalRequest?.url else { return nil }
-    let indexedTracks = searchResults.enumerated().filter() { $0.1.url == url }
-    return indexedTracks.first?.0
-  }
-
+  lazy var downloadsSession: URLSession = {
+    let configuration = URLSessionConfiguration.background(withIdentifier: "es.swiftindepth.bgsessionconfiguration")
+    return URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
+  }()
+  
   // MARK: - Document directory helpers
   // Get local file path: download task stores tune here; AV player plays it.
   let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
   func localFilePath(for url: URL) -> URL {
     return documentsPath.appendingPathComponent(url.lastPathComponent)
   }
-
+  
   func localFileExists(for track: Track) -> Bool {
     let localUrl = localFilePath(for: track.url)
     var isDir: ObjCBool = false
     return FileManager.default.fileExists(atPath: localUrl.path, isDirectory: &isDir)
   }
-
+  
   // MARK: - View controller methods
   
   override func viewDidLoad() {

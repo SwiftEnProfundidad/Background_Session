@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18C0C62A1DF4858D00393D33 /* StoryboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0C6291DF4858D00393D33 /* StoryboardSupport.swift */; };
 		18C0C62C1DF485CA00393D33 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0C62B1DF485CA00393D33 /* Download.swift */; };
+		2AFBFFF325ABA56400AAD4C8 /* SearchVC + URLSessionDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFBFFF225ABA56400AAD4C8 /* SearchVC + URLSessionDelegates.swift */; };
 		40420F6F1F6BE785005E2A22 /* ProgressUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40420F6E1F6BE785005E2A22 /* ProgressUpdateDelegate.swift */; };
 		4051C2DE1E078EE00031FE46 /* SearchVC+SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4051C2DD1E078EE00031FE46 /* SearchVC+SearchBarDelegate.swift */; };
 		40C13C1A1F2DEF0D007AAD9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D430D71F18938D0042301B /* Images.xcassets */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		18C0C6291DF4858D00393D33 /* StoryboardSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSupport.swift; sourceTree = "<group>"; };
 		18C0C62B1DF485CA00393D33 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		2AFBFFF225ABA56400AAD4C8 /* SearchVC + URLSessionDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC + URLSessionDelegates.swift"; sourceTree = "<group>"; };
 		40420F6E1F6BE785005E2A22 /* ProgressUpdateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressUpdateDelegate.swift; sourceTree = "<group>"; };
 		4051C2DD1E078EE00031FE46 /* SearchVC+SearchBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchVC+SearchBarDelegate.swift"; sourceTree = "<group>"; };
 		40C690641F5E8CB5008B0D16 /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				D92117481B596DFE008DAD44 /* VIew */,
 				D92117491B596E03008DAD44 /* Model */,
 				D9EF8FE81B53FD6900EFC4B6 /* SearchViewController.swift */,
+				2AFBFFF225ABA56400AAD4C8 /* SearchVC + URLSessionDelegates.swift */,
 				4051C2DD1E078EE00031FE46 /* SearchVC+SearchBarDelegate.swift */,
 				4051C2D41E065CCE0031FE46 /* Networking */,
 				D9EF8FCC1B53FD2100EFC4B6 /* Main.storyboard */,
@@ -205,6 +208,7 @@
 				D9EF8FF11B53FDCB00EFC4B6 /* TrackCell.swift in Sources */,
 				D9EF8FF21B53FDCB00EFC4B6 /* Track.swift in Sources */,
 				4051C2DE1E078EE00031FE46 /* SearchVC+SearchBarDelegate.swift in Sources */,
+				2AFBFFF325ABA56400AAD4C8 /* SearchVC + URLSessionDelegates.swift in Sources */,
 				40C690651F5E8CB5008B0D16 /* DownloadService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
